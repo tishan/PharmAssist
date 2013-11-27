@@ -1,0 +1,44 @@
+﻿
+/*Popup dialog box
+
+.dialog_container { font-size: 12px; }
+.dialog_container .dialog_header h2 { line-height: 20px; }
+.dialog_container .dialog_header .dialog_close { line-height: 14px; }
+.dialog_container .AdminPanelHeader h3 { line-height: 14px; }
+.dialog_container label, .dialog_container input, .dialog_container button, .dialog_container select, .dialog_container textarea { font-size: 12px; }
+.dialog_container select, .dialog_container textarea, .dialog_container input[type="text"], .dialog_container input[type="password"] { font-size: 12px; margin-bottom: 3px; }
+.dialog_container input.common_text_button { font-size: 10px; }
+.dialog_container label { font-size: 12px; display: inline-block; padding-left: 3px; padding-right: 5px; }
+.dialog_container input[type="file"] { height: auto; }
+.dialog_container .ui-datepicker { display: none; font-size: 12px; }
+.dialog_container .label_span { margin-left: 0px; }
+
+*/
+
+.dialog_container{ -moz-border-radius:5px;-webkit-border-radius:5px; background:#ffffff; border:border:1px solid #B4B4B4; margin:100px auto 0 auto; max-width:700px;}
+.dialog_container.campaign_owners{width:400px !important;}
+.dialog_container.campaignWorkFlow{width:450px !important;}
+.dialog_container.emailTemplateWorkFlow{width:500px !important;}
+.dialog_container.campaignTypeWorkFlow{width:600px !important;}
+.dialog_header{min-height:30px; background:url("images/common_button_bg.png") repeat-x scroll 0 0 #C0C0C0; border-bottom:none;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px; position:relative;}
+.dialog_header h2{ text-transform:capitalize; color:#000000;float:left;font-size:14px;margin:0;padding:5px 0 5px 5px; font-weight:bold; text-shadow:1px 1px 0 #EFEFEF; max-width:600px; margin-right:35px;}
+.dialog_header .dialog_close{border:solid 1px #50241b; border-top:solid 1px #50241b;  height:16px; float:right; margin:5px 5px 0px 0px; background:url("images/popup_close_button_bg.jpg") repeat-x scroll 0 0 #c47d71; padding:0px 5px 0px 5px; cursor:pointer; font-weight:bold; font-family:Verdana; text-shadow: 1px 1px 0px #e3aaa5; position:absolute; top:0; right:0;}
+.dialog_header .dialog_close:hover{background:url("images/popup_close_button_bg_hover.jpg") repeat-x scroll 0 0 #a74e46;}
+.dialog_content{max-height:350px; background:#ffffff;  border-top:1px solid #B4B4B4;  border-bottom:1px solid #B4B4B4; padding:10px 5px 10px 5px; overflow-y:auto;}
+.dialog_content1{max-height:350px; background:#ffffff;  border-top:1px solid #B4B4B4;  border-bottom:1px solid #B4B4B4; padding:0px; overflow-y:auto; -moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;}
+.dialog_content1 .dialog_buttons{margin-left:0px; position:static;}
+.customFieldDialog .dialog_buttons{margin-left:0px; position:static;}
+.PluginPropertyDialog .dialog_buttons{margin-left:0px; position:static;}
+.dialog_content1 .dialog_header{margin-bottom:10px;}
+.dialog_content1 .content_div{padding:10px 5px 10px 5px;}
+.dialog_content_inner{float:left;  padding-bottom:45px; }
+.dialog_buttons{padding-top:10px; border-top:solid 1px #dddddd; position:fixed; background:url("images/admin_UI_content_bg1.png") repeat-x scroll 0 0 #ffffff; margin-left:3px; padding-bottom:7px; }
+.dialog_buttons.main{padding-top:10px; border-top:solid 1px #dddddd; position:absolute; background:url("images/admin_UI_content_bg1.png") repeat-x scroll 0 0 #ffffff; margin-left:3px; padding-bottom:7px; margin-top:-60px; }
+.dialog_buttons_inner{padding-left:5px;}
+.dialog_footer{height:15px; background:url("images/common_button_bg.png") repeat-x scroll 0 0 #C0C0C0; -moz-border-radius-bottomleft:5px;-moz-border-radius-bottomright:5px;-webkit-border-bottom-left-radius:5px;-webkit-border-bottom-right-radius:5px; border-top:solid 1px #bebebe; }
+.dialog_header .dialog_close .common_text_button{border:none; background:transparent; padding:0px; height:15px;}
+.dialog_header .dialog_close .common_text_button:hover{}
+.jqmContent{ overflow:hidden;}
+.select_site_panel_outer{border-left:solid 1px #b4b4b4;border-right:solid 1px #b4b4b4;}
+.select_site_panel_outer .dialog_content_outer{border-left:solid 1px #ffffff;border-right:solid 1px #ffffff; padding-top:1px; padding-bottom:1px;}
+.select_site_panel_outer .dialog_content, .select_site_panel_outer .dialog_content1{border-left:solid 1px #b4b4b4;border-right:solid 1px #b4b4b4;}

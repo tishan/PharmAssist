@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace PharmAssist.Core.Data.Entities
+{
+	public class Invoice:EntityBase
+	{
+		public int InvoiceId
+		{
+			get;
+			set;
+		}
+
+		public DateTime InvoiceDate
+		{
+			get;
+			set;
+		}
+
+		public int InvoiceNumber
+		{
+			get;
+			set;
+		}
+
+		public double Amount
+		{
+			get;
+			set;
+		}
+
+	}
+}

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F14F6DA3-641D-483D-AC1C-86E6B3277807}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PharmAssist.Core</RootNamespace>
+    <AssemblyName>PharmAssist.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Dao\Impementations\InvoiceDao.cs" />
+    <Compile Include="Data\Dao\Interfaces\IInvoiceDao.cs" />
+    <Compile Include="Data\Entities\Invoice.cs" />
+    <Compile Include="Data\Entities\InvoiceSettlement.cs" />
+    <Compile Include="Data\Entities\Settlement.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="PharmAssistException.cs" />
+    <Compile Include="Data\Collection\CompanyCollection.cs" />
+    <Compile Include="Data\Collection\EntityCollection.cs" />
+    <Compile Include="Data\Collection\CustomerCollection.cs" />
+    <Compile Include="Data\Collection\SettingCollection\SettingCollection.cs" />
+    <Compile Include="Data\ConstraintException.cs" />
+    <Compile Include="Data\Dao\DaoFactory.cs" />
+    <Compile Include="Data\Dao\IDaoFactory.cs" />
+    <Compile Include="Data\Dao\Impementations\BaseDao.cs" />
+    <Compile Include="Data\Dao\Impementations\CompanyDao.cs" />
+    <Compile Include="Data\Dao\Impementations\CustomerDao.cs" />
+    <Compile Include="Data\Dao\Interfaces\ICompanyDao.cs" />
+    <Compile Include="Data\Dao\Interfaces\ICustomerDao.cs" />
+    <Compile Include="Data\Dao\Interfaces\IDao.cs" />
+    <Compile Include="Data\DataException.cs" />
+    <Compile Include="Data\Entities\Customer.cs" />
+    <Compile Include="Data\Entities\Company.cs" />
+    <Compile Include="Data\Entities\EntityBase.cs" />
+    <Compile Include="Data\Entities\Settings\SettingBase.cs" />
+    <Compile Include="Data\ExceptionHelper.cs" />
+    <Compile Include="Data\SqlServerDatabase.cs.cs" />
+    <Compile Include="Data\SqlServerDatabaseAssembler.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="NullableDataReader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Implementations\CustomerService.cs" />
+    <Compile Include="Services\Implementations\InvoiceService.cs" />
+    <Compile Include="Services\Interfaces\ICustomerService.cs" />
+    <Compile Include="Services\Interfaces\IInvoiceService.cs" />
+    <Compile Include="Services\ServiceBase.cs" />
+    <Compile Include="Services\ServiceFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\CompositeEntities\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
