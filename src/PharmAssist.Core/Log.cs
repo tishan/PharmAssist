@@ -10,7 +10,7 @@ using System.Web;
 
 namespace PharmAssist.Core
 {
-	/// <summary>
+	///// <summary>
 	/// Logs debug and error information using the enterprise library .
 	/// </summary>
 	public static class Log
