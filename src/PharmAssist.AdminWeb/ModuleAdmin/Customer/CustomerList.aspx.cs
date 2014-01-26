@@ -41,8 +41,5 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 				}
 			}
 		}
-
-		
-
 	}
 }

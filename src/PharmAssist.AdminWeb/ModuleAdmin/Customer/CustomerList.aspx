@@ -19,7 +19,6 @@
 						<ItemTemplate>
 							<asp:HyperLink ID="lnkCustomerEdit" runat="server" CssClass="aDialog">Edit</asp:HyperLink>
 						</ItemTemplate>
-						<ItemStyle/>
 					</asp:TemplateField>
 		</Columns>
 	</asp:GridView>

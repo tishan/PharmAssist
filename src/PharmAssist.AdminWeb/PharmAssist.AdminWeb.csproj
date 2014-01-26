@@ -80,8 +80,8 @@
     <Content Include="Js\Notify.js" />
     <Content Include="Js\PopupDialog.js" />
     <Content Include="ModuleAdmin\Customer\AddCustomer.ascx" />
-    <Content Include="ModuleAdmin\Customer\AddEditCustomer.aspx" />
     <Content Include="ModuleAdmin\Customer\CustomerList.aspx" />
+    <Content Include="ModuleAdmin\Invoice\InvoiceList.aspx" />
     <Content Include="ModuleAdmin\PopupManager.ascx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -166,19 +166,19 @@
     <Compile Include="ModuleAdmin\Customer\AddCustomer.ascx.designer.cs">
       <DependentUpon>AddCustomer.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ModuleAdmin\Customer\AddEditCustomer.aspx.cs">
-      <DependentUpon>AddEditCustomer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ModuleAdmin\Customer\AddEditCustomer.aspx.designer.cs">
-      <DependentUpon>AddEditCustomer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ModuleAdmin\Customer\CustomerList.aspx.cs">
       <DependentUpon>CustomerList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ModuleAdmin\Customer\CustomerList.aspx.designer.cs">
       <DependentUpon>CustomerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleAdmin\Invoice\InvoiceList.aspx.cs">
+      <DependentUpon>InvoiceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleAdmin\Invoice\InvoiceList.aspx.designer.cs">
+      <DependentUpon>InvoiceList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModuleAdmin\PopupManager.ascx.cs">
       <DependentUpon>PopupManager.ascx</DependentUpon>
