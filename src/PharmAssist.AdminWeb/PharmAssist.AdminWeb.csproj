@@ -81,6 +81,7 @@
     <Content Include="Js\PopupDialog.js" />
     <Content Include="ModuleAdmin\Customer\AddCustomer.ascx" />
     <Content Include="ModuleAdmin\Customer\CustomerList.aspx" />
+    <Content Include="ModuleAdmin\Invoice\AddInvoice.ascx" />
     <Content Include="ModuleAdmin\Invoice\InvoiceList.aspx" />
     <Content Include="ModuleAdmin\PopupManager.ascx" />
     <Content Include="Styles\Site.css" />
@@ -172,6 +173,13 @@
     </Compile>
     <Compile Include="ModuleAdmin\Customer\CustomerList.aspx.designer.cs">
       <DependentUpon>CustomerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleAdmin\Invoice\AddInvoice.ascx.cs">
+      <DependentUpon>AddInvoice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleAdmin\Invoice\AddInvoice.ascx.designer.cs">
+      <DependentUpon>AddInvoice.ascx</DependentUpon>
     </Compile>
     <Compile Include="ModuleAdmin\Invoice\InvoiceList.aspx.cs">
       <DependentUpon>InvoiceList.aspx</DependentUpon>

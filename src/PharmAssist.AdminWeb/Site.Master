@@ -39,7 +39,7 @@
 							<asp:MenuItem NavigateUrl="~/ModuleAdmin/Customer/AddEditCustomer.aspx" Text="Customer" Value="Customer"></asp:MenuItem>
 						</asp:MenuItem>
 						<asp:MenuItem Text="Invoices" Value="Invoices">
-							<asp:MenuItem Text="Invoice" Value="Invoice"></asp:MenuItem>
+							<asp:MenuItem Text="Invoice" Value="Invoice" NavigateUrl="~/ModuleAdmin/Invoice/AddInvoice.ascx"></asp:MenuItem>
 							<asp:MenuItem NavigateUrl="~/ModuleAdmin/Invoice/InvoiceList.aspx" Text="Invoice List" Value="Invoice List"></asp:MenuItem>
 						</asp:MenuItem>
                     </Items>
