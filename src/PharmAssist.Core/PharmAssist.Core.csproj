@@ -58,8 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Collection\InvoiceCollection.cs" />
+    <Compile Include="Data\Collection\InvoiceSettlementCollection.cs" />
     <Compile Include="Data\Dao\Impementations\InvoiceDao.cs" />
+    <Compile Include="Data\Dao\Impementations\InvoiceSettlementDao.cs" />
     <Compile Include="Data\Dao\Interfaces\IInvoiceDao.cs" />
+    <Compile Include="Data\Dao\Interfaces\IInvoiceSettlementDao.cs" />
     <Compile Include="Data\Entities\Invoice.cs" />
     <Compile Include="Data\Entities\InvoiceSettlement.cs" />
     <Compile Include="Data\Entities\Settlement.cs" />
@@ -92,8 +95,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Implementations\CustomerService.cs" />
     <Compile Include="Services\Implementations\InvoiceService.cs" />
+    <Compile Include="Services\Implementations\InvoiceSettlementService.cs" />
     <Compile Include="Services\Interfaces\ICustomerService.cs" />
     <Compile Include="Services\Interfaces\IInvoiceService.cs" />
+    <Compile Include="Services\Interfaces\IInvoiceSettlementService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
     <Compile Include="Services\ServiceFactory.cs" />
   </ItemGroup>

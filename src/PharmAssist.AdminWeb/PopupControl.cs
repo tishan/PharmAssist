@@ -9,6 +9,9 @@ namespace PharmAssist.AdminWeb
 	{
 		None = 0,
 
-		AddCustomer = 1
+		AddCustomer = 1,
+		AddInvoice = 2,
+		AddInvoiceSettlement = 3
+
 	}
 }

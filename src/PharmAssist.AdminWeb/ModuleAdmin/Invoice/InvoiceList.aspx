@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-	<h2>INVOICE LIST</h2>
+	<h2>INVOICES</h2>
 	<asp:GridView ID="gvInvoiceList" runat="server" AutoGenerateColumns="False" OnRowDataBound="gvInvoiceList_RowDataBound" Width="231px">
 		<Columns>
 			<asp:BoundField DataField="InvoiceNumber" HeaderText="Invoice No" />

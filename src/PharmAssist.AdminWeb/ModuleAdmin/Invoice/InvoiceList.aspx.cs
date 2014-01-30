@@ -22,10 +22,10 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 
 		private void LoadInvoices()
 		{
-			InvoiceCollection customerList = new InvoiceCollection();
-			customerList = _invoiceService.GetInvoiceList();
+			InvoiceCollection invoiceList = new InvoiceCollection();
+			invoiceList = _invoiceService.GetInvoiceList();
 
-			gvInvoiceList.DataSource = customerList;
+			gvInvoiceList.DataSource = invoiceList;
 			gvInvoiceList.DataBind();
 		}
 
@@ -37,7 +37,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 				if (lnkCustomerEdit != null)
 				{
 					lnkCustomerEdit.NavigateUrl = Navigation.GetPopupNavigationUrl(
-							PopupControl.AddCustomer, null);
+							PopupControl.AddInvoice, null);
 				}
 			}
 		}

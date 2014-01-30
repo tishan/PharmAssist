@@ -81,6 +81,8 @@
     <Content Include="Js\PopupDialog.js" />
     <Content Include="ModuleAdmin\Customer\AddCustomer.ascx" />
     <Content Include="ModuleAdmin\Customer\CustomerList.aspx" />
+    <Content Include="ModuleAdmin\InvoiceSettlement\AddInvoiceSettlement.ascx" />
+    <Content Include="ModuleAdmin\InvoiceSettlement\InvoiceSettlementList.aspx" />
     <Content Include="ModuleAdmin\Invoice\AddInvoice.ascx" />
     <Content Include="ModuleAdmin\Invoice\InvoiceList.aspx" />
     <Content Include="ModuleAdmin\PopupManager.ascx" />
@@ -173,6 +175,20 @@
     </Compile>
     <Compile Include="ModuleAdmin\Customer\CustomerList.aspx.designer.cs">
       <DependentUpon>CustomerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleAdmin\InvoiceSettlement\AddInvoiceSettlement.ascx.cs">
+      <DependentUpon>AddInvoiceSettlement.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleAdmin\InvoiceSettlement\AddInvoiceSettlement.ascx.designer.cs">
+      <DependentUpon>AddInvoiceSettlement.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleAdmin\InvoiceSettlement\InvoiceSettlementList.aspx.cs">
+      <DependentUpon>InvoiceSettlementList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleAdmin\InvoiceSettlement\InvoiceSettlementList.aspx.designer.cs">
+      <DependentUpon>InvoiceSettlementList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModuleAdmin\Invoice\AddInvoice.ascx.cs">
       <DependentUpon>AddInvoice.ascx</DependentUpon>
