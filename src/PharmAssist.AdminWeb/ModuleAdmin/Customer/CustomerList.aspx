@@ -6,7 +6,7 @@
 
 
 <div>
-	<asp:Button ID="btnAddCustomer" runat="server" Text="Add Customer" />
+	<asp:HyperLink ID="lnkAddCustomer" runat="server" CssClass="aDialog">Add Customer</asp:HyperLink>
 </div>
 	<asp:GridView ID="gvCustomerList" runat="server" 
 	AutoGenerateColumns="False" onrowdatabound="gvCustomerList_RowDataBound">

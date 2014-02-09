@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PharmAssist.Core.Services.Interfaces;
+using PharmAssist.Core.Services;
+using PharmAssist.Core.Services.Implementations;
+using InvoiceEntity = PharmAssist.Core.Data.Entities.Invoice;
 
 namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 {

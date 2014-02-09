@@ -18,6 +18,8 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			LoadCustomers();
+			lnkAddCustomer.NavigateUrl = Navigation.GetPopupNavigationUrl(
+							PopupControl.AddCustomer, null);
 		}
 
 		private void LoadCustomers()
@@ -41,5 +43,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 				}
 			}
 		}
+
+
 	}
 }
