@@ -25,7 +25,7 @@
 		}
 
 		/// <summary>
-		/// Gets or sets customer twon.
+		/// Gets or sets customer town.
 		/// </summary>
 		public string  Town
 		{
@@ -42,24 +42,36 @@
 			set;
 		}
 
+		/// <summary>
+		/// Gets or sets the telephone.
+		/// </summary>
 		public string Telephone
 		{
 			get;
 			set;
 		}
 
+		/// <summary>
+		/// Gets or sets the Mobile.
+		/// </summary>
 		public string Mobile
 		{
 			get;
 			set;
 		}
 
+		/// <summary>
+		/// Gets or sets the Email.
+		/// </summary>
 		public string Email
 		{
 			get;
 			set;
 		}
 
+		/// <summary>
+		/// Gets or sets the Comments.
+		/// </summary>
 		public string Comments
 		{
 			get;
