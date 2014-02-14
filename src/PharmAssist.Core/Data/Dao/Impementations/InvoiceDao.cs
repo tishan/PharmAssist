@@ -52,10 +52,10 @@ namespace PharmAssiost.Core.Data.Dao.Impementations
 		{
 			base.PopulateEntityFromReader(reader, entity);
 
-			entity.InvoiceId = Convert.ToInt32(reader.GetString("invoice_id"));
-			entity.InvoiceNumber = Convert.ToInt32(reader.GetString("invoice_number"));
-			entity.InvoiceDate = Convert.ToDateTime(reader.GetString("invoice_date"));
-			entity.Amount = Convert.ToDouble(reader.GetString("amount"));
+			//entity.invoiceId = Convert.ToInt32(reader.GetString("id"));
+			entity.invoiceNumber = reader.GetString("invoice_number");
+			entity.invoiceDate = Convert.ToDateTime(reader.GetDateTime("invoice_date"));
+			entity.amount = Convert.ToDouble(reader.GetString("amount"));
 		}
 
 		public InvoiceCollection GetInvoiceCollection()
@@ -80,10 +80,10 @@ namespace PharmAssiost.Core.Data.Dao.Impementations
 		protected override void PopulateParametersFromEntity(Database db, DbCommand command, Invoice entity)
 		{
 			base.PopulateParametersFromEntity(db, command, entity);
-			db.AddInParameter(command, "invoice_id", DbType.String, entity.InvoiceId);
-			db.AddInParameter(command, "invoice_number", DbType.String, entity.InvoiceNumber);
-			db.AddInParameter(command, "invoice_date", DbType.String, entity.InvoiceDate);
-			db.AddInParameter(command, "amount", DbType.String, entity.Amount);			
+			db.AddInParameter(command, "invoiceDate", DbType.String, entity.invoiceDate);
+			db.AddInParameter(command, "invoiceNumber", DbType.String, entity.invoiceNumber);			
+			db.AddInParameter(command, "amount", DbType.String, entity.amount);
+			db.AddInParameter(command, "creditPeriod", DbType.Currency, entity.creditPeriod);
 		}
 	}
 }
