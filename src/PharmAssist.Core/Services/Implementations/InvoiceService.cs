@@ -18,7 +18,6 @@ namespace PharmAssist.Core.Services.Implementations
 			IInvoiceDao invoiceDao = DaoFactory.CreateDao<IInvoiceDao>();
 			invoiceDao.Save(invoice);
 		}
-
 		public  InvoiceCollection GetInvoiceList()
 		{
 			IInvoiceDao invoiceDao = DaoFactory.CreateDao<IInvoiceDao>();
