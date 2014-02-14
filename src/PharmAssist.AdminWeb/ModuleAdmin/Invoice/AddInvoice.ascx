@@ -1,10 +1,5 @@
 ﻿ <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddInvoice.ascx.cs" Inherits="PharmAssist.AdminWeb.ModuleAdmin.Invoice.AddInvoice" %>
 
-<script>
-	$(function () {
-		$("#<%= txtInvoiceDate.ClientID %>").datepicker();
-});
-</script>
 
 <div>
 	<table>
@@ -30,6 +25,15 @@
 			</td>
 			<td>
 				<asp:TextBox ID="txtAmount" runat="server"></asp:TextBox>
+			</td>
+		</tr>
+		</tr>
+			<tr>
+			<td>
+			<asp:Literal ID="ltlCreditPeriod" runat="server" Text="Credit Period"></asp:Literal>
+			</td>
+			<td>
+				<asp:TextBox ID="txtCreditPeriod" runat="server"></asp:TextBox>
 			</td>
 		</tr>
 		

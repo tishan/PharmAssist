@@ -3,8 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 	<h2>Customer List</h2>
-
-
 <div>
 	<asp:HyperLink ID="lnkAddCustomer" runat="server" CssClass="aDialog">Add Customer</asp:HyperLink>
 </div>

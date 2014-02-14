@@ -18,6 +18,8 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			LoadInvoices();
+			lnkAddInvoice.NavigateUrl = Navigation.GetPopupNavigationUrl(
+							PopupControl.AddInvoice, null);
 		}
 
 		private void LoadInvoices()
@@ -40,6 +42,11 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 							PopupControl.AddInvoice, null);
 				}
 			}
+		}
+
+		protected void lnkAddInvoice_DataBinding(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

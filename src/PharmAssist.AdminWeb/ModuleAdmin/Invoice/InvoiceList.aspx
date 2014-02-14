@@ -3,11 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 	<h2>INVOICES</h2>
+	<asp:HyperLink ID="lnkAddInvoice" runat="server" CssClass="aDialog">Add Invoice</asp:HyperLink>
 	<asp:GridView ID="gvInvoiceList" runat="server" AutoGenerateColumns="False" OnRowDataBound="gvInvoiceList_RowDataBound" Width="231px">
 		<Columns>
-			<asp:BoundField DataField="InvoiceNumber" HeaderText="Invoice No" />
-			<asp:BoundField DataField="InvoiceDate" HeaderText="Invoice Date" />
-			<asp:BoundField DataField="InvoiceAmount" HeaderText="Amount" />
+			<asp:BoundField DataField="invoiceNumber" HeaderText="Invoice No" />
+			<asp:BoundField DataField="invoiceDate" HeaderText="Invoice Date" />
+			<asp:BoundField DataField="amount" HeaderText="Amount" />
 			<asp:TemplateField>
 				<ItemTemplate>
 							<asp:HyperLink ID="lnkInvoiceEdit" runat="server" CssClass="aDialog">Edit</asp:HyperLink>
