@@ -21,6 +21,9 @@ namespace PharmAssist.AdminWeb
 				case PopupControl.AddCustomer:
 					controlPath = "~/ModuleAdmin/Customer/AddCustomer.ascx";
 					break;
+				case PopupControl.AddInvoice:
+					controlPath = "~/ModuleAdmin/Invoice/AddInvoice.ascx";
+					break;
 			}
 
 			return controlPath;

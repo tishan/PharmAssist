@@ -15,7 +15,7 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    My ASP.NET Application
+                    Pharm Assist
                 </h1>
             </div>
             <div class="loginDisplay">
@@ -33,13 +33,10 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
 						<asp:MenuItem Text="Customers" Value="Customers">
 							<asp:MenuItem NavigateUrl="~/ModuleAdmin/Customer/CustomerList.aspx" Text="CustomerList" Value="CustomerList"></asp:MenuItem>
-							<asp:MenuItem NavigateUrl="~/ModuleAdmin/Customer/AddEditCustomer.aspx" Text="Customer" Value="Customer"></asp:MenuItem>
 						</asp:MenuItem>
 						<asp:MenuItem Text="Invoices" Value="Invoices">
-							<asp:MenuItem Text="Invoice" Value="Invoice" NavigateUrl="~/ModuleAdmin/Invoice/AddInvoice.ascx"></asp:MenuItem>
 							<asp:MenuItem NavigateUrl="~/ModuleAdmin/Invoice/InvoiceList.aspx" Text="Invoice List" Value="Invoice List"></asp:MenuItem>
 							<asp:MenuItem NavigateUrl="~/ModuleAdmin/InvoiceSettlement/InvoiceSettlementList.aspx" Text="Invoice Settlement List" Value="Invoice Settlement List"></asp:MenuItem>
 						</asp:MenuItem>
