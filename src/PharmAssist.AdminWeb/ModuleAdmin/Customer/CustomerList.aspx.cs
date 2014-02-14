@@ -40,6 +40,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 				{
 					lnkCustomerEdit.NavigateUrl = Navigation.GetPopupNavigationUrl(
 							PopupControl.AddCustomer, null);
+					lnkCustomerEdit.ImageUrl = "../../Resources/edit-notes.png";
 				}
 			}
 		}
