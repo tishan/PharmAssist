@@ -75,6 +75,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 			base.PopulateEntityFromReader(reader, entity);
 
 			entity.CompanyName = reader.GetString("company_name");
+			entity.CompanyCode = reader.GetString("company_code");
 
 		}
 
@@ -89,7 +90,8 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		protected override void PopulateParametersFromEntity(Database db, DbCommand command, Company entity)
 		{
 			base.PopulateParametersFromEntity(db, command, entity);
-			db.AddInParameter(command, "company_name", DbType.String, entity.CompanyName);
+			db.AddInParameter(command, "companyName", DbType.String, entity.CompanyName);
+			db.AddInParameter(command, "companyCode", DbType.String, entity.CompanyCode);
 		}
 
 
