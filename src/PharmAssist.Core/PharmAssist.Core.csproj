@@ -93,9 +93,13 @@
     <Compile Include="Log.cs" />
     <Compile Include="NullableDataReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Implementations\BankService.cs" />
+    <Compile Include="Services\Implementations\CompanyService.cs" />
     <Compile Include="Services\Implementations\CustomerService.cs" />
     <Compile Include="Services\Implementations\InvoiceService.cs" />
     <Compile Include="Services\Implementations\InvoiceSettlementService.cs" />
+    <Compile Include="Services\Interfaces\IBankService.cs" />
+    <Compile Include="Services\Interfaces\ICompanyService.cs" />
     <Compile Include="Services\Interfaces\ICustomerService.cs" />
     <Compile Include="Services\Interfaces\IInvoiceService.cs" />
     <Compile Include="Services\Interfaces\IInvoiceSettlementService.cs" />

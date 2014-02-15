@@ -40,6 +40,9 @@
 							<asp:MenuItem NavigateUrl="~/ModuleAdmin/Invoice/InvoiceList.aspx" Text="Invoice List" Value="Invoice List"></asp:MenuItem>
 							<asp:MenuItem NavigateUrl="~/ModuleAdmin/InvoiceSettlement/InvoiceSettlementList.aspx" Text="Invoice Settlement List" Value="Invoice Settlement List"></asp:MenuItem>
 						</asp:MenuItem>
+                    	<asp:MenuItem Text="General" Value="General">
+							<asp:MenuItem NavigateUrl="~/ModuleAdmin/Company/CompanyList.aspx" Text="Company" Value="Company"></asp:MenuItem>
+						</asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>

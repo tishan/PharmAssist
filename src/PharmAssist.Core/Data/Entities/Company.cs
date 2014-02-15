@@ -11,14 +11,25 @@ namespace PharmAssist.Core.Data.Entities
 	/// </summary>
 	public class Company : EntityBase
 	{
+		/// <summary>
+		/// 
+		/// </summary>
+		public string CompanyCode
+		{
+			get;
+			set;
+		}
+
 		/// <summary> 
 		/// Gets or seets report name.
 		/// </summary>
+		/// 
 		public string CompanyName
 		{
 			get;
 			set;
 		}
+		
 
 	}
 }

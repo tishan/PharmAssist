@@ -29,7 +29,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssist_GetInvoiceSettlementDetail";
+				return "pharmAssistInvoiceSettlement_GetInvoiceSettlementDetail";
 			}
 		}
 
@@ -37,7 +37,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssist_UpadteInvoiceSettlement";
+				return "pharmAssistInvoiceSettlement_UpadteInvoiceSettlement";
 			}
 		}
 
@@ -45,7 +45,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssist_DeleteInvoiceSettlement";
+				return "pharmAssistInvoiceSettlement_DeleteInvoiceSettlement";
 			}
 		}
 
@@ -53,10 +53,10 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			base.PopulateEntityFromReader(reader, entity);
 
-			entity.invoiceNumber =reader.GetString("invoice_id");
-			entity.collectionDate = Convert.ToDateTime(reader.GetString("collection_date"));
-			entity.settlementAmount = Convert.ToDouble(reader.GetString("settlement_amount"));
-			entity.settlementId = Convert.ToInt32(reader.GetString("settlement_id"));
+			entity.InvoiceNumber =reader.GetString("invoice_id");
+			entity.CollectionDate = Convert.ToDateTime(reader.GetString("collection_date"));
+			entity.SettlementAmount = Convert.ToDouble(reader.GetString("settlement_amount"));
+			entity.SettlementId = Convert.ToInt32(reader.GetString("settlement_id"));
 		}
 
 		public InvoiceSettlementCollection GetInvoiceSettlementCollection()

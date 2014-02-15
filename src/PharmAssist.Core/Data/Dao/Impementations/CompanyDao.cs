@@ -22,7 +22,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssist_AddCompany";
+				return "pharmAssistCompany_AddCompany";
 			}
 		}
 
@@ -35,7 +35,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssist_GetCompanyDetail";
+				return "pharmAssistCompany_GetCompanyDetail";
 			}
 		}
 
@@ -48,7 +48,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssist_UpdateCompany";
+				return "pharmAssistCompany_UpdateCompany";
 			}
 		}
 
@@ -61,7 +61,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssist_DeleteCompany";
+				return "pharmAssistCompany_DeleteCompany";
 			}
 		}
 
@@ -93,10 +93,10 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		}
 
 
-		public CompanyCollection GetCompany()
+		public CompanyCollection GetCompanyCollection()
 		{
 			Database db = DatabaseFactory.CreateDatabase();
-			DbCommand command = db.GetStoredProcCommand("pharmAssist_GetCompanyList");
+			DbCommand command = db.GetStoredProcCommand("pharmAssistCompany_GetCompanyList");
 
 			CompanyCollection companyCollection = new CompanyCollection();
 			using (NullableDataReader reader = new NullableDataReader(db.ExecuteReader(command)))

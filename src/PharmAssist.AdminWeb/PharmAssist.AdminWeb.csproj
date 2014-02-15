@@ -79,6 +79,10 @@
     <Content Include="Js\JQuery\jquery.modal.js" />
     <Content Include="Js\Notify.js" />
     <Content Include="Js\PopupDialog.js" />
+    <Content Include="ModuleAdmin\Bank\AddBank.ascx" />
+    <Content Include="ModuleAdmin\Bank\BankList.aspx" />
+    <Content Include="ModuleAdmin\Company\AddCompany.ascx" />
+    <Content Include="ModuleAdmin\Company\CompanyList.aspx" />
     <Content Include="ModuleAdmin\Customer\AddCustomer.ascx" />
     <Content Include="ModuleAdmin\Customer\CustomerList.aspx" />
     <Content Include="ModuleAdmin\InvoiceSettlement\AddInvoiceSettlement.ascx" />
@@ -164,6 +168,34 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\NotifyHelper.cs" />
+    <Compile Include="ModuleAdmin\Bank\AddBank.ascx.cs">
+      <DependentUpon>AddBank.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleAdmin\Bank\AddBank.ascx.designer.cs">
+      <DependentUpon>AddBank.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleAdmin\Bank\BankList.aspx.cs">
+      <DependentUpon>BankList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleAdmin\Bank\BankList.aspx.designer.cs">
+      <DependentUpon>BankList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleAdmin\Company\AddCompany.ascx.cs">
+      <DependentUpon>AddCompany.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleAdmin\Company\AddCompany.ascx.designer.cs">
+      <DependentUpon>AddCompany.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleAdmin\Company\CompanyList.aspx.cs">
+      <DependentUpon>CompanyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModuleAdmin\Company\CompanyList.aspx.designer.cs">
+      <DependentUpon>CompanyList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ModuleAdmin\Customer\AddCustomer.ascx.cs">
       <DependentUpon>AddCustomer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -37,7 +37,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssist_GetCustomerDetail";
+				return "pharmAssistCustomer_GetCustomerDetail";
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssist_UpadteCustomer";
+				return "pharmAssistCustomer_UpadteCustomer";
 			}
 		}
 
@@ -63,7 +63,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssist_DeleteCustomer";
+				return "pharmAssistCustomer_DeleteCustomer";
 			}
 		}
 

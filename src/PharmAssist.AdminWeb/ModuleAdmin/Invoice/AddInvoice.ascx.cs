@@ -25,10 +25,10 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 			base.OnSave();
 
 			InvoiceEntity invoice = new InvoiceEntity();
-			invoice.invoiceNumber = txtInvoiceNumber.Text.Trim();
-			invoice.invoiceDate = Convert.ToDateTime(txtInvoiceDate.Text.Trim());
-			invoice.amount = Convert.ToDouble(txtAmount.Text.Trim());
-			invoice.creditPeriod = Convert.ToInt32(txtCreditPeriod.Text.Trim());
+			invoice.InvoiceNumber = txtInvoiceNumber.Text.Trim();
+			invoice.InvoiceDate = Convert.ToDateTime(txtInvoiceDate.Text.Trim());
+			invoice.Amount = Convert.ToDouble(txtAmount.Text.Trim());
+			invoice.CreditPeriod = Convert.ToInt32(txtCreditPeriod.Text.Trim());
 
 			_invoiceService.SaveInvoice(invoice);
 

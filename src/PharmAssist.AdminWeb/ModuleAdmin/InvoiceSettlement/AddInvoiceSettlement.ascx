@@ -33,7 +33,7 @@
 				<asp:TextBox ID="txtSettlementType" runat="server"></asp:TextBox>
 			</td>
 		</tr>
-		</tr>
+	
 			<tr>
 			<td>
 			<asp:Literal ID="ltlSettlementAmount" runat="server" Text="Settlement Amount"></asp:Literal>
@@ -42,7 +42,7 @@
 				<asp:TextBox ID="txtSettlementAmount" runat="server"></asp:TextBox>
 			</td>
 		</tr>
-		</tr>
+
 			<tr>
 			<td>
 			<asp:Literal ID="ltlDepositeDate" runat="server" Text="Deposit Date"></asp:Literal>
@@ -51,7 +51,7 @@
 				<asp:TextBox ID="txtDepositDate" runat="server"></asp:TextBox>
 			</td>
 		</tr>
-				</tr>
+
 			<tr>
 			<td>
 			<asp:Literal ID="ltlCompanyName" runat="server" Text="Company Name"></asp:Literal>

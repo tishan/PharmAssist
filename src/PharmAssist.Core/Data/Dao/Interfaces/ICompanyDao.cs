@@ -12,5 +12,6 @@ namespace PharmAssist.Core.Data.Dao.Interfaces
 	/// </summary>
 	public interface ICompanyDao : IDao<Company>
 	{
+		CompanyCollection GetCompanyCollection();
 	}
 }

@@ -26,12 +26,12 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 
 			InvoiceSettlementEntity invoiceSettlement = new InvoiceSettlementEntity();
 
-			invoiceSettlement.settlementId = Convert.ToInt32(txtSettlementId.Text.Trim());
-			invoiceSettlement.invoiceNumber = txtInvoiceNumber.Text.Trim();
-			invoiceSettlement.collectionDate = Convert.ToDateTime(txtCollectionDate.Text.Trim());
-			invoiceSettlement.settlementType = Convert.ToInt32(txtSettlementType.Text.Trim());
-			invoiceSettlement.settlementAmount = Convert.ToDouble(txtSettlementAmount.Text.Trim());
-			invoiceSettlement.depositDate = Convert.ToDateTime(txtDepositDate.Text.Trim());
+			invoiceSettlement.SettlementId = Convert.ToInt32(txtSettlementId.Text.Trim());
+			invoiceSettlement.InvoiceNumber = txtInvoiceNumber.Text.Trim();
+			invoiceSettlement.CollectionDate = Convert.ToDateTime(txtCollectionDate.Text.Trim());
+			invoiceSettlement.SettlementType = Convert.ToInt32(txtSettlementType.Text.Trim());
+			invoiceSettlement.SettlementAmount = Convert.ToDouble(txtSettlementAmount.Text.Trim());
+			invoiceSettlement.DepositDate = Convert.ToDateTime(txtDepositDate.Text.Trim());
 			//invoiceSettlement.
 			//_invoiceService.SaveInvoice(invoice);
 

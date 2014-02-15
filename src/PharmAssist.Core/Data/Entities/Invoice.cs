@@ -7,37 +7,34 @@ namespace PharmAssist.Core.Data.Entities
 {
 	public class Invoice:EntityBase
 	{
-		public int invoiceId
+		public int InvoiceId
 		{
 			get;
 			set;
 		}
 
-		public DateTime invoiceDate
+		public DateTime InvoiceDate
 		{
 			get;
 			set;
 		}
 
-		public string invoiceNumber
+		public string InvoiceNumber
 		{
 			get;
 			set;
 		}
 
-		public double amount
+		public double Amount
 		{
 			get;
 			set;
 		}
 
-		public int creditPeriod
+		public int CreditPeriod
 		{
 			get;
 			set;
 		}
-
-
-
 	}
 }
