@@ -8,6 +8,7 @@ using PharmAssist.Core.Services.Interfaces;
 using PharmAssist.Core.Services;
 using PharmAssist.Core.Services.Implementations;
 using CustomerEntity = PharmAssist.Core.Data.Entities.Customer;
+using System.Globalization;
 
 namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 {
@@ -15,10 +16,66 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 	{
 		ICustomerService _customerService = ServiceFactory.CreateService<CustomerService>();
 
+		public int CustomerId
+		{
+			get
+			{
+				if (!string.IsNullOrEmpty(Request.QueryString[QueryStringParameters.CustomerId]))
+				{
+					return Convert.ToInt32(Request.QueryString[QueryStringParameters.CustomerId],
+							CultureInfo.InvariantCulture);
+				}
+				else
+				{
+					return 0;
+				}
+			}
+			
+		}
+
+
+		protected override void OnLoad(EventArgs e)
+		{
+			base.OnLoad(e);
+
+			if(!IsPostBack)
+			{
+				if(CustomerId > 0)
+				{
+					LoadCustomer(CustomerId);
+				}
+			}
+		}
+
+		private void LoadCustomer(int customerId)
+		{
+			CustomerEntity customer = _customerService.GetCustomer(customerId);
+
+			txtCustomerPersonalName.Text = customer.CustomerName;
+			txtTown.Text = customer.Town;
+			txtAddress.Text = customer.Address;
+			txtComments.Text = customer.Comments;
+			txtEmail.Text = customer.Email;
+			txtMobile.Text = customer.Mobile;
+			txtTelephone.Text = customer.Telephone;
+			txtCustomerBusinessName.Text = customer.CutomerBussinessName;
+			txtComments.Text = customer.Comments;
+		}
+
 
 		public override string Title
 		{
-			get { return "Add Customer"; }
+			get
+			{
+				string title = "Add Customer";
+
+				if (CustomerId > 0)
+				{
+					title = "Edit Customer";
+				}
+
+				return title;
+			}
 		}
 
 		public override void OnSave()

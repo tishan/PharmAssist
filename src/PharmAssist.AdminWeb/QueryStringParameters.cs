@@ -11,5 +11,7 @@ namespace PharmAssist.AdminWeb
 		/// Popup Control Id
 		/// </summary>
 		internal const string PopupControlId = "pconid";
+
+		internal const string CustomerId = "cusid";
 	}
 }

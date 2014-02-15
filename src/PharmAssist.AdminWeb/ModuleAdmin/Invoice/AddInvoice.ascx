@@ -13,6 +13,24 @@
 			</tr>
 		<tr>
 			<td>
+				<asp:Literal ID="ltlCustomer" runat="server" Text="Customer"></asp:Literal>
+			</td>
+			<td>
+				
+				<asp:DropDownList ID="ddlCustomer" runat="server"></asp:DropDownList>
+			</td>
+			</tr>
+		<tr>
+			<td>
+				<asp:Literal ID="ltlCompany" runat="server" Text="Company"></asp:Literal>
+			</td>
+			<td>
+				
+				<asp:DropDownList ID="ddlCompany" runat="server"></asp:DropDownList>
+			</td>
+			</tr>
+		<tr>
+			<td>
 			<asp:Literal ID="ltlInvoiceNumber" runat="server" Text="Invoice No"></asp:Literal>
 			</td>
 			<td>

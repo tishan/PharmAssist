@@ -12,5 +12,9 @@ namespace PharmAssist.Core.Services.Interfaces
 		void SaveCustomer(Customer customer);
 
 		CustomerCollection GetCustomerList();
+
+		void DeleteCustomer(int customerId);
+
+		Customer GetCustomer(int customerId);
 	}
 }

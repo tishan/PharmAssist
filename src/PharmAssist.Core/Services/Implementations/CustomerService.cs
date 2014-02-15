@@ -23,5 +23,17 @@ namespace PharmAssist.Core.Services.Implementations
 			ICustomerDao customerDao = DaoFactory.CreateDao<ICustomerDao>();
 			return customerDao.GetCustomerCollection();
 		}
+
+		public void DeleteCustomer(int customerId)
+		{
+			ICustomerDao customerDao = DaoFactory.CreateDao<ICustomerDao>();
+			customerDao.DeleteById(customerId);
+		}
+
+		public Customer GetCustomer(int customerId)
+		{
+			ICustomerDao customerDao = DaoFactory.CreateDao<ICustomerDao>();
+			return customerDao.GetById(customerId);
+		}
 	}
 }
