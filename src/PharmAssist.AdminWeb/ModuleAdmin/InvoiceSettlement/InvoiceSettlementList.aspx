@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 	<h2>Invoice Settlements</h2>
+	<asp:HyperLink ID="lnkAddSettlement" runat="server" CssClass="aDialog">Perform Settlement</asp:HyperLink>
 	<asp:GridView ID="gvInvoiceSettlementList" runat="server" AutoGenerateColumns="False" OnRowDataBound="gvInvoiceSettlementList_RowDataBound" Width="231px">
 		<Columns>
 			<asp:BoundField DataField="CompanyName" HeaderText="Company Name" />

@@ -18,6 +18,8 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			LoadSettlements();
+			lnkAddSettlement.NavigateUrl = Navigation.GetPopupNavigationUrl(
+				PopupControl.AddInvoiceSettlement, null);
 		}
 
 		private void LoadSettlements()
@@ -40,6 +42,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 				{
 					lnkInvoiceSettlementEdit.NavigateUrl = Navigation.GetPopupNavigationUrl(
 							PopupControl.AddInvoiceSettlement, null);
+					lnkInvoiceSettlementEdit.ImageUrl = "../../Resources/edit-notes.png";
 				}
 			}
 		}

@@ -12,7 +12,7 @@ using PharmAssist.Core.Data.Collection.SettingCollection;
 using PharmAssist.Core.Data.Collection;
 using PharmAssist.Core;
 
-namespace PharmAssiost.Core.Data.Dao.Impementations
+namespace PharmAssist.Core.Data.Dao.Impementations
 {
 	public class InvoiceDao : BaseDao <Invoice>, IInvoiceDao
 	{

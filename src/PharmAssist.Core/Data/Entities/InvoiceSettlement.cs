@@ -7,37 +7,37 @@ namespace PharmAssist.Core.Data.Entities
 {
 	public class InvoiceSettlement:EntityBase
 	{
-		public int InvoiceId
+		public string invoiceNumber
 		{
 			get;
 			set;
 		}
 
-		public DateTime CollectionDate
+		public DateTime collectionDate
 		{
 			get;
 			set;
 		}
 
-		public int SettlementType
+		public int settlementType
 		{
 			get;
 			set;
 		}
 
-		public DateTime DepositDate
+		public DateTime depositDate
 		{
 			get;
 			set;
 		}
 
-		public double SettlementAmount
+		public double settlementAmount
 		{
 			get;
 			set;
 		}
 
-		public int SettlementId
+		public int settlementId
 		{
 			get;
 			set;
