@@ -35,7 +35,6 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Company
 								txtCompanyName.Text + "' is added successfuly.", true);
 			return;
 		}
-
 		
 	}
 }

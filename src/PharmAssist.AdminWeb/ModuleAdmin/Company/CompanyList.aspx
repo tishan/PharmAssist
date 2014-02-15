@@ -6,8 +6,7 @@
 <div>
 	<asp:HyperLink ID="lnkAddCompany" runat="server" CssClass="aDialog">Add Company</asp:HyperLink>
 </div>
-	<asp:GridView ID="gvCompanyList" runat="server" 
-	AutoGenerateColumns="False" onrowdatabound="gvCompanyList_RowDataBound">
+	<asp:GridView ID="gvCompanyList" runat="server" AutoGenerateColumns="False" onrowdatabound="gvCompanyList_RowDataBound">
 		<Columns>
 			<asp:BoundField DataField="CompanyCode" HeaderText="Company Code" />
 			<asp:BoundField DataField="CompanyName" HeaderText="Customer Name" />

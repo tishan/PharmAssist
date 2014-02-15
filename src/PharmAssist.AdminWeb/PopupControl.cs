@@ -11,7 +11,8 @@ namespace PharmAssist.AdminWeb
 
 		AddCustomer = 1,
 		AddInvoice = 2,
-		AddInvoiceSettlement = 3
+		AddInvoiceSettlement = 3,
+		AddCompany = 4
 
 	}
 }

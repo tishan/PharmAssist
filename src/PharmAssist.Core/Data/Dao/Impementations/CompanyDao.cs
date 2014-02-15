@@ -109,7 +109,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 				}
 			}
 
-			companyCollection.TotalCount = (int)db.GetParameterValue(command, "totalCount");
+			//companyCollection.TotalCount = (int)db.GetParameterValue(command, "totalCount");
 
 			return companyCollection;
 		}

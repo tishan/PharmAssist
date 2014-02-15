@@ -19,7 +19,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Company
 		{
 			LoadCustomers();
 			lnkAddCompany.NavigateUrl = Navigation.GetPopupNavigationUrl(
-							PopupControl.AddCustomer, null);
+							PopupControl.AddCompany, null);
 		}
 
 		private void LoadCustomers()
@@ -31,7 +31,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Company
 			gvCompanyList.DataBind();
 		}
 
-		protected void gvCustomerList_RowDataBound(object sender, GridViewRowEventArgs e)
+		protected void gvCompanyList_RowDataBound(object sender, GridViewRowEventArgs e)
 		{
 			if (e.Row.RowType == DataControlRowType.DataRow)
 			{
@@ -39,7 +39,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Company
 				if (lnkCompanyEdit != null)
 				{
 					lnkCompanyEdit.NavigateUrl = Navigation.GetPopupNavigationUrl(
-							PopupControl.AddCustomer, null);
+							PopupControl.AddCompany, null);
 					lnkCompanyEdit.ImageUrl = "../../Resources/edit-notes.png";
 				}
 			}
