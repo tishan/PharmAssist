@@ -75,4 +75,6 @@
 		</tr>--%>
 	</table>
 	<asp:Label ID="lblMessage" runat="server"></asp:Label>
+	<asp:HiddenField ID="hdfCustomerId" runat="server" />
 </div>
+

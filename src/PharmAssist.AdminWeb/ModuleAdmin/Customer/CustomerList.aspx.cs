@@ -39,7 +39,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 
 		protected void gvCustomerList_RowDataBound(object sender, GridViewRowEventArgs e)
 		{
-			CustomerEntity cutomer = e.Row.DataItem as CustomerEntity;
+			CustomerEntity customer = e.Row.DataItem as CustomerEntity;
 
 			if (e.Row.RowType == DataControlRowType.DataRow)
 			{
@@ -48,7 +48,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 				{
 					Dictionary<string, string> parameters = new Dictionary<string, string>();
 					parameters.Add(QueryStringParameters.CustomerId,
-							 cutomer.Id.ToString(CultureInfo.InvariantCulture));
+							 customer.Id.ToString(CultureInfo.InvariantCulture));
 
 					lnkCustomerEdit.NavigateUrl = Navigation.GetPopupNavigationUrl(
 							PopupControl.AddCustomer, parameters);
@@ -60,9 +60,9 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 				LinkButton lbtnDelete = e.Row.FindControl("lbtnDelete") as LinkButton;
 				if (lbtnDelete != null)
 				{
-					if (cutomer != null)
+					if (customer != null)
 					{
-						lbtnDelete.CommandArgument = cutomer.Id.ToString(CultureInfo.InvariantCulture);
+						lbtnDelete.CommandArgument = customer.Id.ToString(CultureInfo.InvariantCulture);
 					}
 				}
 			}	

@@ -50,7 +50,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 		private void LoadCustomer(int customerId)
 		{
 			CustomerEntity customer = _customerService.GetCustomer(customerId);
-
+			hdfCustomerId.Value = Convert.ToString(customer.Id);
 			txtCustomerPersonalName.Text = customer.CustomerName;
 			txtTown.Text = customer.Town;
 			txtAddress.Text = customer.Address;
@@ -83,6 +83,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 			base.OnSave();
 
 			CustomerEntity customer = new CustomerEntity();
+			customer.Id = Convert.ToInt32(hdfCustomerId.Value);
 			customer.CustomerName = txtCustomerPersonalName.Text.Trim();
 			customer.CutomerBussinessName = txtCustomerBusinessName.Text.Trim();
 			customer.Town = txtTown.Text.Trim();

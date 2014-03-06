@@ -50,7 +50,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssistCustomer_UpadteCustomer";
+				return "pharmAssistCustomer_UpdateCustomer";
 			}
 		}
 
@@ -75,7 +75,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		protected override void PopulateEntityFromReader(NullableDataReader reader, Customer entity)
 		{
 			base.PopulateEntityFromReader(reader, entity);
-
+			entity.Id = reader.GetInt32("id");
 			entity.CustomerName = reader.GetString("customer_name");
 			entity.CutomerBussinessName = reader.GetString("customer_business_name");
 			entity.Town = reader.GetString("town");
