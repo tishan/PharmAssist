@@ -8,7 +8,9 @@
 		<Columns>
 			<asp:BoundField DataField="invoiceNumber" HeaderText="Invoice No" />
 			<asp:BoundField DataField="invoiceDate" HeaderText="Invoice Date" />
-			<asp:BoundField DataField="amount" HeaderText="Amount" />
+			<asp:BoundField DataField="amount" HeaderText="Amount" />			
+			<asp:BoundField DataField="customerId" HeaderText="Customer" />
+			<asp:BoundField DataField="companyId" HeaderText="Company" />
 			<asp:TemplateField>
 				<ItemTemplate>
 							<asp:HyperLink ID="lnkInvoiceEdit" runat="server" CssClass="aDialog">Edit</asp:HyperLink>

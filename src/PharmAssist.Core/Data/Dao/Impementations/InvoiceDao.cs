@@ -56,6 +56,8 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 			entity.InvoiceNumber = reader.GetString("invoice_number");
 			entity.InvoiceDate = Convert.ToDateTime(reader.GetDateTime("invoice_date"));
 			entity.Amount = Convert.ToDouble(reader.GetString("amount"));
+			entity.CustomerId = reader.GetInt32("customer_id");
+			entity.CompanyId = reader.GetInt32("company_id");
 		}
 
 		public InvoiceCollection GetInvoiceCollection()
@@ -84,6 +86,8 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 			db.AddInParameter(command, "invoiceNumber", DbType.String, entity.InvoiceNumber);			
 			db.AddInParameter(command, "amount", DbType.String, entity.Amount);
 			db.AddInParameter(command, "creditPeriod", DbType.Currency, entity.CreditPeriod);
+			db.AddInParameter(command, "customerId", DbType.Int32, entity.CustomerId);
+			db.AddInParameter(command, "companyId", DbType.Int32, entity.CompanyId);
 		}
 	}
 }

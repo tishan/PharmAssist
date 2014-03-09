@@ -14,7 +14,7 @@ BEGIN
 	
 	SET NOCOUNT ON;
 
-	SELECT  invoice_id as id, invoice_number , invoice_date, amount, enabled, created, modified
+	SELECT  invoice_id as id, invoice_number , invoice_date, amount, customer_id, company_id enabled, created, modified
 	FROM invoice
 
 END

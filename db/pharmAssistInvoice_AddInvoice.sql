@@ -10,6 +10,8 @@ CREATE PROCEDURE dbo.pharmAssistInvoice_AddInvoice
 	@invoiceDate date,
 	@amount money,
 	@creditPeriod int,
+	@companyId int,
+	@customerId int,
 	@enabled bit,
 	@id int output,
 	@created smalldatetime output
@@ -23,8 +25,8 @@ BEGIN
 
 	SET @created = GETDATE()
 
-	INSERT INTO invoice (invoice_date, invoice_number, amount, credit_period, enabled ,modified, created)
-	VALUES (@invoiceDate, @invoiceNumber, @amount, @creditPeriod, @enabled, @created, @created)
+	INSERT INTO invoice (invoice_date, invoice_number, amount, credit_period, customer_id, company_id, enabled ,modified, created)
+	VALUES (@invoiceDate, @invoiceNumber, @amount, @creditPeriod, @customerId, @companyId, @enabled, @created, @created)
 		
 
 	SET @id = SCOPE_IDENTITY()

@@ -72,6 +72,8 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 			invoice.InvoiceDate = Convert.ToDateTime(txtInvoiceDate.Text.Trim());
 			invoice.Amount = Convert.ToDouble(txtAmount.Text.Trim());
 			invoice.CreditPeriod = Convert.ToInt32(txtCreditPeriod.Text.Trim());
+			invoice.CustomerId = Convert.ToInt32(ddlCustomer.SelectedValue.Trim());
+			invoice.CompanyId = Convert.ToInt32(ddlCompany.SelectedValue.Trim());
 
 			_invoiceService.SaveInvoice(invoice);
 
