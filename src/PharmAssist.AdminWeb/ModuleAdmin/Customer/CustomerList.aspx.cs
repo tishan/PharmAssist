@@ -62,7 +62,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Customer
 				{
 					if (customer != null)
 					{
-						lbtnDelete.CommandArgument = customer.Id.ToString(CultureInfo.InvariantCulture);
+						lbtnDelete.CommandArgument = customer.Id.ToString(CultureInfo.InvariantCulture);						
 					}
 				}
 			}	

@@ -92,6 +92,7 @@
     <Content Include="ModuleAdmin\PopupManager.ascx" />
     <None Include="Resources\edit-icon.png" />
     <None Include="Resources\edit-notes.png" />
+    <Content Include="Resources\Delete-Record.jpg" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
