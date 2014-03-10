@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,14 +22,39 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 		/// </summary>
 		private const string DefaultValueForDropdown = "-100";
 
+		public int InvoiceId
+		{
+			get
+			{
+				if (!string.IsNullOrEmpty(Request.QueryString[QueryStringParameters.InvoiceId]))
+				{
+					return Convert.ToInt32(Request.QueryString[QueryStringParameters.InvoiceId],
+							CultureInfo.InvariantCulture);
+				}
+				else
+				{
+					return 0;
+				}
+			}
+
+		}
+
 		protected override void OnLoad(EventArgs e)
 		{
 			base.OnLoad(e);
 
 			if(!IsPostBack)
 			{
-				LoadDropDownLists();
+				if (InvoiceId > 0)
+				{
+					LoadInvoice(InvoiceId);
+				}
+				else
+				{
+					LoadDropDownLists();
+				}
 			}
+			
 		}
 
 		public override string Title
@@ -59,8 +85,21 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 			ddlCompany.DataBind();
 			ddlCompany.Items.Insert(
 					0, new ListItem("-Select Company-", DefaultValueForDropdown));
+			
+		}
 
-
+		private void LoadInvoice(int invoiceId)
+		{
+			InvoiceEntity invoice = _invoiceService.GetInvoice(invoiceId);
+			hdfInvoiceId.Value = Convert.ToString(invoice.Id);
+			txtInvoiceNumber.Text = Convert.ToString(invoice.InvoiceNumber);
+			txtAmount.Text = Convert.ToString(invoice.Amount);
+			txtInvoiceDate.Text = Convert.ToString(invoice.InvoiceDate);
+			txtCreditPeriod.Text = Convert.ToString(invoice.CreditPeriod);
+			ddlCustomer.Items.Insert(0, Convert.ToString(invoice.CustomerId));
+			ddlCompany.Items.Insert(0,Convert.ToString(invoice.CompanyId));
+			ddlCustomer.Enabled = false;
+			ddlCompany.Enabled = false;
 		}
 
 		public override void OnSave()
@@ -68,6 +107,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 			base.OnSave();
 
 			InvoiceEntity invoice = new InvoiceEntity();
+			invoice.Id = Convert.ToInt32(hdfInvoiceId.Value);
 			invoice.InvoiceNumber = txtInvoiceNumber.Text.Trim();
 			invoice.InvoiceDate = Convert.ToDateTime(txtInvoiceDate.Text.Trim());
 			invoice.Amount = Convert.ToDouble(txtAmount.Text.Trim());
@@ -78,7 +118,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 			_invoiceService.SaveInvoice(invoice);
 
 			OnDialogEvent(this, DialogEventResult.Successful, "The invoice '" +
-								txtInvoiceNumber.Text + "' is added successfuly.", true);
+								txtInvoiceNumber.Text + "' is saved successfuly.", true);
 			return;
 		}
 	}

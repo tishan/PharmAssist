@@ -8,6 +8,8 @@ using PharmAssist.Core.Services.Interfaces;
 using PharmAssist.Core.Services;
 using PharmAssist.Core.Services.Implementations;
 using PharmAssist.Core.Data.Collection;
+using InvoiceEntity = PharmAssist.Core.Data.Entities.Invoice;
+using System.Globalization;
 
 namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 {
@@ -33,13 +35,20 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 
 		protected void gvInvoiceList_RowDataBound(object sender, GridViewRowEventArgs e)
 		{
+			 InvoiceEntity invoice = e.Row.DataItem as InvoiceEntity;
+
 			if (e.Row.RowType == DataControlRowType.DataRow)
 			{
-				HyperLink lnkCustomerEdit = e.Row.FindControl("lnkInvoiceEdit") as HyperLink;
-				if (lnkCustomerEdit != null)
+				Dictionary<string, string> parameters = new Dictionary<string, string>();
+				parameters.Add(QueryStringParameters.InvoiceId,
+						 invoice.Id.ToString(CultureInfo.InvariantCulture));
+
+				HyperLink lnkInvoiceEdit = e.Row.FindControl("lnkInvoiceEdit") as HyperLink;
+				if (lnkInvoiceEdit != null)
 				{
-					lnkCustomerEdit.NavigateUrl = Navigation.GetPopupNavigationUrl(
-							PopupControl.AddInvoice, null);
+					lnkInvoiceEdit.NavigateUrl = Navigation.GetPopupNavigationUrl(
+							PopupControl.AddInvoice, parameters);
+					lnkInvoiceEdit.ImageUrl = "../../Resources/edit-notes.png";
 				}
 			}
 		}

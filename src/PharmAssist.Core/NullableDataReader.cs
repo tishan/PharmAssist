@@ -526,6 +526,11 @@ namespace PharmAssist.Core
             return _reader.GetDouble(ordinal);
         }
 
+		public double GetDouble(string name)
+		{
+			return _reader.GetDouble(_reader.GetOrdinal(name));
+		}
+
         /// <summary>
         /// Gets the <see cref="T:System.Type"/> information corresponding to the
         /// type of <see cref="T:System.Object"/> that would be returned 

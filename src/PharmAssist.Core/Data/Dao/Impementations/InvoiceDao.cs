@@ -36,7 +36,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssistInvoice_UpadteInvoice";
+				return "pharmAssistInvoice_UpdateInvoice";
 			}
 		}
 
@@ -52,7 +52,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			base.PopulateEntityFromReader(reader, entity);
 
-			//entity.invoiceId = Convert.ToInt32(reader.GetString("id"));
+			entity.Id = reader.GetInt32("id");
 			entity.InvoiceNumber = reader.GetString("invoice_number");
 			entity.InvoiceDate = Convert.ToDateTime(reader.GetDateTime("invoice_date"));
 			entity.Amount = Convert.ToDouble(reader.GetString("amount"));
@@ -82,12 +82,16 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		protected override void PopulateParametersFromEntity(Database db, DbCommand command, Invoice entity)
 		{
 			base.PopulateParametersFromEntity(db, command, entity);
-			db.AddInParameter(command, "invoiceDate", DbType.String, entity.InvoiceDate);
-			db.AddInParameter(command, "invoiceNumber", DbType.String, entity.InvoiceNumber);			
-			db.AddInParameter(command, "amount", DbType.String, entity.Amount);
-			db.AddInParameter(command, "creditPeriod", DbType.Currency, entity.CreditPeriod);
-			db.AddInParameter(command, "customerId", DbType.Int32, entity.CustomerId);
-			db.AddInParameter(command, "companyId", DbType.Int32, entity.CompanyId);
+			db.AddInParameter(command, "invoiceDate", DbType.DateTime, entity.InvoiceDate);
+			db.AddInParameter(command, "invoiceNumber", DbType.String, entity.InvoiceNumber);
+			db.AddInParameter(command, "amount", DbType.Currency, entity.Amount);
+			db.AddInParameter(command, "creditPeriod", DbType.Int32, entity.CreditPeriod);
+
+			if (entity.Id == 0)
+			{
+				db.AddInParameter(command, "customerId", DbType.Int32, entity.CustomerId);
+				db.AddInParameter(command, "companyId", DbType.Int32, entity.CompanyId);
+			}
 		}
 	}
 }

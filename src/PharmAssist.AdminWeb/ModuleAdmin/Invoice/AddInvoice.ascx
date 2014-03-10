@@ -54,6 +54,6 @@
 				<asp:TextBox ID="txtCreditPeriod" runat="server"></asp:TextBox>
 			</td>
 		</tr>
-		
+		<asp:HiddenField ID="hdfInvoiceId" runat="server" />
 	</table>
 </div>

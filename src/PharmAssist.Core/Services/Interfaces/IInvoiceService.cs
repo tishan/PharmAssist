@@ -15,5 +15,7 @@ namespace PharmAssist.Core.Services.Interfaces
 		void SaveInvoice(Invoice invoice);
 
 		InvoiceCollection GetInvoiceList();
+
+		Invoice GetInvoice(int invoiceId);
 	}
 }

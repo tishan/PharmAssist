@@ -7,12 +7,6 @@ namespace PharmAssist.Core.Data.Entities
 {
 	public class Invoice:EntityBase
 	{
-		public int InvoiceId
-		{
-			get;
-			set;
-		}
-
 		public DateTime InvoiceDate
 		{
 			get;
