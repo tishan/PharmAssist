@@ -26,5 +26,11 @@ namespace PharmAssist.Core.Services.Implementations
 			IInvoiceSettlementDao invoiceSettlementDao = DaoFactory.CreateDao<IInvoiceSettlementDao>();
 			return invoiceSettlementDao.GetInvoiceSettlementCollection();
 		}
+
+		public InvoiceSettlement GetInvoiceSettlement(int invoiceSettlementid)
+		{
+			IInvoiceSettlementDao invoiceSettlementDao = DaoFactory.CreateDao<IInvoiceSettlementDao>();
+			return invoiceSettlementDao.GetById(invoiceSettlementid);
+		}
 	}
 }

@@ -14,5 +14,7 @@ namespace PharmAssist.AdminWeb
 
 		internal const string CustomerId = "cusid";
 		internal const string InvoiceId = "invoiceid";
+		internal const string InvoiceSettlementId = "invoicesettlementid";
+
 	}
 }

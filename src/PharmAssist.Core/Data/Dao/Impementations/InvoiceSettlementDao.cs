@@ -53,10 +53,10 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			base.PopulateEntityFromReader(reader, entity);
 
+			entity.Id = reader.GetInt32("id");
 			entity.InvoiceNumber =reader.GetString("invoice_id");
 			entity.CollectionDate = Convert.ToDateTime(reader.GetString("collection_date"));
 			entity.SettlementAmount = Convert.ToDouble(reader.GetString("settlement_amount"));
-			entity.SettlementId = Convert.ToInt32(reader.GetString("settlement_id"));
 		}
 
 		public InvoiceSettlementCollection GetInvoiceSettlementCollection()

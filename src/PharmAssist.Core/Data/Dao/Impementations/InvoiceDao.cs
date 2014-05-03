@@ -44,7 +44,7 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		{
 			get
 			{
-				return "pharmAssistInvoice_DeleteCustomer";
+				return "pharmAssistInvoice_DeleteInvoice";
 			}
 		}
 

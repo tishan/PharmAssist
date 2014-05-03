@@ -3,10 +3,18 @@
 	<table>
 		<tr>
 			<td>
-			<asp:Literal ID="ltlSettlememtId" runat="server" Text="Settlement ID"></asp:Literal>
+			<asp:Literal ID="ltlCompanyName" runat="server" Text="Company Name"></asp:Literal>
 			</td>
 			<td>
-				<asp:TextBox ID="txtSettlementId" runat="server"></asp:TextBox>
+				<asp:DropDownList ID="ddlCompanyName" runat="server"></asp:DropDownList>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<asp:Literal ID="ltlCustomerBusinessName" runat="server" Text="Customer Business Name"></asp:Literal>
+			</td>
+			<td>
+				<asp:DropDownList ID="ddlCustomerBusinessName" runat="server"></asp:DropDownList>
 			</td>
 		</tr>
 		<tr>
@@ -14,7 +22,7 @@
 			<asp:Literal ID="ltlInvoiceNumber" runat="server" Text="Invoice No"></asp:Literal>
 			</td>
 			<td>
-				<asp:TextBox ID="txtInvoiceNumber" runat="server"></asp:TextBox>
+				<asp:DropDownList ID="ddlInvoiceNumber" runat="server"></asp:DropDownList>
 			</td>
 		</tr>
 		<tr>
@@ -30,11 +38,10 @@
 			<asp:Literal ID="ltlSettlementType" runat="server" Text="Settlement Type"></asp:Literal>
 			</td>
 			<td>
-				<asp:TextBox ID="txtSettlementType" runat="server"></asp:TextBox>
+				<asp:DropDownList ID="ddlCollectionType" runat="server"></asp:DropDownList>
 			</td>
 		</tr>
-	
-			<tr>
+		<tr>
 			<td>
 			<asp:Literal ID="ltlSettlementAmount" runat="server" Text="Settlement Amount"></asp:Literal>
 			</td>
@@ -50,24 +57,7 @@
 			<td>
 				<asp:TextBox ID="txtDepositDate" runat="server"></asp:TextBox>
 			</td>
-		</tr>
-
-			<tr>
-			<td>
-			<asp:Literal ID="ltlCompanyName" runat="server" Text="Company Name"></asp:Literal>
-			</td>
-			<td>
-				<asp:TextBox ID="txtCompanyName" runat="server"></asp:TextBox>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<asp:Literal ID="ltlCustomerBusinessName" runat="server" Text="Customer Business Name"></asp:Literal>
-			</td>
-			<td>
-				<asp:TextBox ID="txtCustomerBusinessName" runat="server"></asp:TextBox>
-			</td>
-		</tr>
+		</tr>		
 		<tr>
 			<td>
 			<asp:Literal ID="ltlInterest" runat="server" Text="Interest"></asp:Literal>
@@ -103,3 +93,4 @@
 		
 	</table>
 </div>
+<asp:HiddenField ID="hdfInvoiceSettlmentId" runat="server" />

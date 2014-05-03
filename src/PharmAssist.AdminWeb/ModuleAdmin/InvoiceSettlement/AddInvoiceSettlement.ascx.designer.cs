@@ -13,22 +13,40 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement {
     public partial class AddInvoiceSettlement {
         
         /// <summary>
-        /// ltlSettlememtId control.
+        /// ltlCompanyName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlSettlememtId;
+        protected global::System.Web.UI.WebControls.Literal ltlCompanyName;
         
         /// <summary>
-        /// txtSettlementId control.
+        /// ddlCompanyName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSettlementId;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCompanyName;
+        
+        /// <summary>
+        /// ltlCustomerBusinessName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltlCustomerBusinessName;
+        
+        /// <summary>
+        /// ddlCustomerBusinessName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCustomerBusinessName;
         
         /// <summary>
         /// ltlInvoiceNumber control.
@@ -40,13 +58,13 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement {
         protected global::System.Web.UI.WebControls.Literal ltlInvoiceNumber;
         
         /// <summary>
-        /// txtInvoiceNumber control.
+        /// ddlInvoiceNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtInvoiceNumber;
+        protected global::System.Web.UI.WebControls.DropDownList ddlInvoiceNumber;
         
         /// <summary>
         /// ltlCollectionDate control.
@@ -76,13 +94,13 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement {
         protected global::System.Web.UI.WebControls.Literal ltlSettlementType;
         
         /// <summary>
-        /// txtSettlementType control.
+        /// ddlCollectionType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSettlementType;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCollectionType;
         
         /// <summary>
         /// ltlSettlementAmount control.
@@ -119,42 +137,6 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDepositDate;
-        
-        /// <summary>
-        /// ltlCompanyName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlCompanyName;
-        
-        /// <summary>
-        /// txtCompanyName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCompanyName;
-        
-        /// <summary>
-        /// ltlCustomerBusinessName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltlCustomerBusinessName;
-        
-        /// <summary>
-        /// txtCustomerBusinessName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerBusinessName;
         
         /// <summary>
         /// ltlInterest control.
@@ -227,5 +209,14 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTotalOutstading;
+        
+        /// <summary>
+        /// hdfInvoiceSettlmentId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdfInvoiceSettlmentId;
     }
 }

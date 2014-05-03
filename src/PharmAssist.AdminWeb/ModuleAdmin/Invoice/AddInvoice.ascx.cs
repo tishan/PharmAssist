@@ -36,7 +36,6 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.Invoice
 					return 0;
 				}
 			}
-
 		}
 
 		protected override void OnLoad(EventArgs e)

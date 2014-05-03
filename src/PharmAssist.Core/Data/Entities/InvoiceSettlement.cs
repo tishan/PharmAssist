@@ -79,6 +79,22 @@ namespace PharmAssist.Core.Data.Entities
 			set;
 		}
 
+		public int InvoiceId
+		{
+			get;
+			set;
+		}
 
+		public int CompanyId
+		{
+			get;
+			set;
+		}
+
+		public int CustomerId
+		{
+			get;
+			set;
+		}
 	}
 }

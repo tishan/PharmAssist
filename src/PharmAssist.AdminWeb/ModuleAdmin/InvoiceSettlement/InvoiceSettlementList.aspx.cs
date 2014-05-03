@@ -8,6 +8,8 @@ using PharmAssist.Core.Services.Interfaces;
 using PharmAssist.Core.Services;
 using PharmAssist.Core.Services.Implementations;
 using PharmAssist.Core.Data.Collection;
+using InvoiceSettlementEntity = PharmAssist.Core.Data.Entities.InvoiceSettlement;
+using System.Globalization;
 
 namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 {
@@ -34,9 +36,14 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 
 		protected void gvInvoiceSettlementList_RowDataBound(object sender, GridViewRowEventArgs e)
 		{
+			InvoiceSettlementEntity invoiceSettlement = e.Row.DataItem as InvoiceSettlementEntity;
 
 			if (e.Row.RowType == DataControlRowType.DataRow)
 			{
+				Dictionary<string, string> parameters = new Dictionary<string, string>();
+				parameters.Add(QueryStringParameters.InvoiceSettlementId,
+						 invoiceSettlement.Id.ToString(CultureInfo.InvariantCulture));
+
 				HyperLink lnkInvoiceSettlementEdit = e.Row.FindControl("lnkInvoiceSettlementEdit") as HyperLink;
 				if (lnkInvoiceSettlementEdit != null)
 				{

@@ -14,7 +14,7 @@ BEGIN
 	
 	SET NOCOUNT ON;
 
-	SELECT  invoice_settlement_id , invoice_no, collection_date
+	SELECT  invoice_settlement_id , invoice_id, collection_date, settlement_amount
 	FROM invoicesettlement
 
 END

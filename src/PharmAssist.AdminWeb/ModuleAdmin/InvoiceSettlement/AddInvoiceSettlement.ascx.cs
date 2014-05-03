@@ -8,16 +8,89 @@ using PharmAssist.Core.Services.Interfaces;
 using PharmAssist.Core.Services.Implementations;
 using PharmAssist.Core.Services;
 using InvoiceSettlementEntity = PharmAssist.Core.Data.Entities.InvoiceSettlement;
+using System.Globalization;
+using PharmAssist.Core.Data.Collection;
 
 namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 {
 	public partial class AddInvoiceSettlement : DialogBase
 	{
-		IInvoiceService _invoiceService = ServiceFactory.CreateService<InvoiceService>();
+		IInvoiceSettlementService _invoiceSettlementService = ServiceFactory.CreateService<InvoiceSettlementService>();
+		private const string DefaultValueForDropdown = "-100";
 
 		public override string Title
 		{
 			get { return "Settle Invoice"; }
+		}
+
+		public int InvoiceSettlementId
+		{
+			get
+			{
+				if (!string.IsNullOrEmpty(Request.QueryString[QueryStringParameters.InvoiceSettlementId]))
+				{
+					return Convert.ToInt32(Request.QueryString[QueryStringParameters.InvoiceSettlementId],
+							CultureInfo.InvariantCulture);
+				}
+				else
+				{
+					return 0;
+				}
+			}
+		}
+
+		protected override void OnLoad(EventArgs e)
+		{
+			base.OnLoad(e);
+
+			if (!IsPostBack)
+			{
+				if (InvoiceSettlementId  > 0)
+				{
+					LoadInvoiceSettlement(InvoiceSettlementId);
+				}
+				else
+				{
+					LoadDropDownLists();
+				}
+			}
+
+		}
+
+		private void LoadDropDownLists()
+		{
+			ICustomerService customerService = ServiceFactory.CreateService<CustomerService>();
+			CustomerCollection customerCollection = customerService.GetCustomerList();
+
+			ddlCustomerBusinessName.DataTextField = "CustomerName";
+			ddlCustomerBusinessName.DataValueField = "Id";
+
+			ddlCustomerBusinessName.DataSource = customerCollection;
+			ddlCustomerBusinessName.DataBind();
+			ddlCustomerBusinessName.Items.Insert(
+					0, new ListItem("-Select Customer-", DefaultValueForDropdown));
+
+			ICompanyService companyService = ServiceFactory.CreateService<CompanyService>();
+			CompanyCollection companyCollection = companyService.GetCompanyList();
+
+			ddlCompanyName.DataTextField = "CompanyName";
+			ddlCompanyName.DataValueField = "Id";
+
+			ddlCompanyName.DataSource = companyCollection;
+			ddlCompanyName.DataBind();
+			ddlCompanyName.Items.Insert(
+					0, new ListItem("-Select Company-", DefaultValueForDropdown));
+
+			IInvoiceService invoiceService = ServiceFactory.CreateService<InvoiceService>();
+			InvoiceCollection invoiceCollection = invoiceService.GetInvoiceList();
+
+			ddlInvoiceNumber.DataTextField = "InvoiceNumber";
+			ddlInvoiceNumber.DataValueField = "Id";
+
+			ddlInvoiceNumber.DataSource = invoiceCollection;
+			ddlInvoiceNumber.DataBind();
+			ddlInvoiceNumber.Items.Insert(
+					0, new ListItem("-Select Invoice-", DefaultValueForDropdown));
 		}
 
 		public override void OnSave()
@@ -26,18 +99,45 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 
 			InvoiceSettlementEntity invoiceSettlement = new InvoiceSettlementEntity();
 
-			invoiceSettlement.SettlementId = Convert.ToInt32(txtSettlementId.Text.Trim());
-			invoiceSettlement.InvoiceNumber = txtInvoiceNumber.Text.Trim();
+			invoiceSettlement.SettlementId = Convert.ToInt32(hdfInvoiceSettlmentId.Value);
 			invoiceSettlement.CollectionDate = Convert.ToDateTime(txtCollectionDate.Text.Trim());
-			invoiceSettlement.SettlementType = Convert.ToInt32(txtSettlementType.Text.Trim());
+			invoiceSettlement.SettlementType = Convert.ToInt32(ddlInvoiceNumber.SelectedValue.Trim());
 			invoiceSettlement.SettlementAmount = Convert.ToDouble(txtSettlementAmount.Text.Trim());
 			invoiceSettlement.DepositDate = Convert.ToDateTime(txtDepositDate.Text.Trim());
-			//invoiceSettlement.
+			invoiceSettlement.Interest = (float)Convert.ToDouble(txtInterest.Text.Trim());
+			invoiceSettlement.GrnId = Convert.ToInt32(txtInterest.Text.Trim());
+			invoiceSettlement.BalanceAmount = Convert.ToDouble(txtBalanceAmount.Text.Trim());
+			invoiceSettlement.TotalOutstandingAmount = Convert.ToDouble(txtTotalOutstading.Text.Trim());
+
+			//Need to obtain the invoice id via a query from the invoice number, from the invoice table
+			//and it should be applicable for the other two fields as well.
+			invoiceSettlement.InvoiceId = 1; //ddlInvoiceNumber.SelectedValue.Trim();
+			invoiceSettlement.CustomerId = 1; //ddlCustomerBusinessName.SelectedValue.Trim();
+			invoiceSettlement.CompanyId = 1; //ddlCompanyName.SelectedValue.Trim();
+
+
+
+
+			_invoiceSettlementService.SaveInvoice(invoiceSettlement);
+
+			OnDialogEvent(this, DialogEventResult.Successful, "The settlement for invoice number'" +
+								ddlInvoiceNumber.SelectedValue.Trim() + "' is saved successfuly.", true);
 			//_invoiceService.SaveInvoice(invoice);
 
 			//OnDialogEvent(this, DialogEventResult.Successful, "The invoice '" +
 			//					txtInvoiceNumber.Text + "' is added successfuly.", true);
 			return;
+		}
+
+		private void LoadInvoiceSettlement(int invoiceSettlementId)
+		{
+			InvoiceSettlementEntity invoiceSettlement = _invoiceSettlementService.GetInvoiceSettlement(invoiceSettlementId);
+			hdfInvoiceSettlmentId.Value = Convert.ToString(invoiceSettlement.Id);
+			ddlInvoiceNumber.Items.Insert(0, Convert.ToString(invoiceSettlement.InvoiceNumber));
+			ddlCustomerBusinessName.Items.Insert(0, Convert.ToString(invoiceSettlement.CustomerId));
+			ddlCompanyName.Items.Insert(0, Convert.ToString(invoiceSettlement.CompanyId));
+			ddlCustomerBusinessName.Enabled = false;
+			ddlCompanyName.Enabled = false;
 		}
 
 
