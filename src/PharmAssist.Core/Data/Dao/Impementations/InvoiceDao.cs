@@ -79,6 +79,26 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 			return invoiceCollection;
 		}
 
+		public InvoiceCollection GetFilteredInvoiceList(int companyId, int customerId)
+		{
+			Database db = DatabaseFactory.CreateDatabase();
+			DbCommand command = db.GetStoredProcCommand("pharmAssistInvoice_GetFilteredInvoiceList");
+			db.AddInParameter(command, "companyId", DbType.Int32, companyId);
+			db.AddInParameter(command, "customerId", DbType.Int32, customerId);
+
+			InvoiceCollection invoiceCollection = new InvoiceCollection();
+			using (NullableDataReader reader = new NullableDataReader(db.ExecuteReader(command)))
+			{
+				while (reader.Read())
+				{
+					Invoice invoice = new Invoice();
+					PopulateEntityFromReader(reader, invoice);
+					invoiceCollection.Add(invoice);
+				}
+			}
+			return invoiceCollection;
+		}
+
 		protected override void PopulateParametersFromEntity(Database db, DbCommand command, Invoice entity)
 		{
 			base.PopulateParametersFromEntity(db, command, entity);

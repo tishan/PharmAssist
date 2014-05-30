@@ -13,5 +13,7 @@ namespace PharmAssist.Core.Data.Dao.Interfaces
 	public interface IInvoiceDao: IDao<Invoice>
 	{
 		InvoiceCollection GetInvoiceCollection();
+
+		InvoiceCollection GetFilteredInvoiceList(int companyId, int customerId);
 	}
 }

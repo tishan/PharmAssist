@@ -59,13 +59,17 @@
   <ItemGroup>
     <Compile Include="Data\Collection\InvoiceCollection.cs" />
     <Compile Include="Data\Collection\InvoiceSettlementCollection.cs" />
+    <Compile Include="Data\Collection\SettlementTypeCollection.cs" />
     <Compile Include="Data\Dao\Impementations\InvoiceDao.cs" />
     <Compile Include="Data\Dao\Impementations\InvoiceSettlementDao.cs" />
+    <Compile Include="Data\Dao\Impementations\SettlementTypeDao.cs" />
     <Compile Include="Data\Dao\Interfaces\IInvoiceDao.cs" />
     <Compile Include="Data\Dao\Interfaces\IInvoiceSettlementDao.cs" />
+    <Compile Include="Data\Dao\Interfaces\ISettlementTypeDao.cs" />
     <Compile Include="Data\Entities\Invoice.cs" />
     <Compile Include="Data\Entities\InvoiceSettlement.cs" />
     <Compile Include="Data\Entities\Settlement.cs" />
+    <Compile Include="Data\Entities\SettlementType.cs" />
     <Compile Include="Data\prop.cs" />
     <Compile Include="Helpers\StringHelper.cs" />
     <Compile Include="PharmAssistException.cs" />

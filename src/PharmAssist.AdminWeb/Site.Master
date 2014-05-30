@@ -42,6 +42,7 @@
 						</asp:MenuItem>
                     	<asp:MenuItem Text="General" Value="General">
 							<asp:MenuItem NavigateUrl="~/ModuleAdmin/Company/CompanyList.aspx" Text="Company" Value="Company"></asp:MenuItem>
+							<asp:MenuItem NavigateUrl="~/ModuleAdmin/SettlementType/SettlementType.aspx" Text="SettlementTypes" Value="SettlementTypes"></asp:MenuItem>
 						</asp:MenuItem>
                     </Items>
                 </asp:Menu>

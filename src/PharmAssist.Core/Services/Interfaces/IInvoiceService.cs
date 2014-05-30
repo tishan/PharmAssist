@@ -17,5 +17,7 @@ namespace PharmAssist.Core.Services.Interfaces
 		InvoiceCollection GetInvoiceList();
 
 		Invoice GetInvoice(int invoiceId);
+
+		InvoiceCollection GetFilteredInvoiceList(int companyId, int customerId);
 	}
 }

@@ -81,10 +81,6 @@ namespace PharmAssist.Core.Data.Dao.Impementations
 		protected override void PopulateParametersFromEntity(Database db, DbCommand command, InvoiceSettlement entity)
 		{
 			base.PopulateParametersFromEntity(db, command, entity);
-			//db.AddInParameter(command, "invoice_id", DbType.String, entity.InvoiceId);
-			//db.AddInParameter(command, "invoice_number", DbType.String, entity.InvoiceNumber);
-			//db.AddInParameter(command, "invoice_date", DbType.String, entity.InvoiceDate);
-			//db.AddInParameter(command, "amount", DbType.String, entity.Amount);
 		}
 	}
 }

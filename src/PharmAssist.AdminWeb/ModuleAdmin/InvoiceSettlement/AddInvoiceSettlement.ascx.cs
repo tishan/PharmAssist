@@ -81,16 +81,13 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 			ddlCompanyName.Items.Insert(
 					0, new ListItem("-Select Company-", DefaultValueForDropdown));
 
-			IInvoiceService invoiceService = ServiceFactory.CreateService<InvoiceService>();
-			InvoiceCollection invoiceCollection = invoiceService.GetInvoiceList();
 
-			ddlInvoiceNumber.DataTextField = "InvoiceNumber";
-			ddlInvoiceNumber.DataValueField = "Id";
+			//this list should be filled with retreiving the collection dynamically from the database from  the stelement type
 
-			ddlInvoiceNumber.DataSource = invoiceCollection;
-			ddlInvoiceNumber.DataBind();
-			ddlInvoiceNumber.Items.Insert(
-					0, new ListItem("-Select Invoice-", DefaultValueForDropdown));
+			ddlCollectionType.Items.Insert(0, new ListItem("-Collection Type-"));
+			ddlCollectionType.Items.Insert(1, new ListItem("Cash"));
+			ddlCollectionType.Items.Insert(2, new ListItem("Cheque"));
+
 		}
 
 		public override void OnSave()
@@ -101,7 +98,7 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 
 			invoiceSettlement.SettlementId = Convert.ToInt32(hdfInvoiceSettlmentId.Value);
 			invoiceSettlement.CollectionDate = Convert.ToDateTime(txtCollectionDate.Text.Trim());
-			invoiceSettlement.SettlementType = Convert.ToInt32(ddlInvoiceNumber.SelectedValue.Trim());
+			invoiceSettlement.SettlementType = Convert.ToInt32(ddlInvoiceNumber.SelectedIndex);
 			invoiceSettlement.SettlementAmount = Convert.ToDouble(txtSettlementAmount.Text.Trim());
 			invoiceSettlement.DepositDate = Convert.ToDateTime(txtDepositDate.Text.Trim());
 			invoiceSettlement.Interest = (float)Convert.ToDouble(txtInterest.Text.Trim());
@@ -111,12 +108,9 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 
 			//Need to obtain the invoice id via a query from the invoice number, from the invoice table
 			//and it should be applicable for the other two fields as well.
-			invoiceSettlement.InvoiceId = 1; //ddlInvoiceNumber.SelectedValue.Trim();
-			invoiceSettlement.CustomerId = 1; //ddlCustomerBusinessName.SelectedValue.Trim();
-			invoiceSettlement.CompanyId = 1; //ddlCompanyName.SelectedValue.Trim();
-
-
-
+			invoiceSettlement.InvoiceId = Convert.ToInt32(ddlInvoiceNumber.SelectedValue.Trim());
+			invoiceSettlement.CustomerId =  Convert.ToInt32(ddlCustomerBusinessName.SelectedValue.Trim());
+			invoiceSettlement.CompanyId = Convert.ToInt32(ddlCompanyName.SelectedValue.Trim());
 
 			_invoiceSettlementService.SaveInvoice(invoiceSettlement);
 
@@ -138,6 +132,23 @@ namespace PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement
 			ddlCompanyName.Items.Insert(0, Convert.ToString(invoiceSettlement.CompanyId));
 			ddlCustomerBusinessName.Enabled = false;
 			ddlCompanyName.Enabled = false;
+		}
+
+		protected void ddlCompanyName_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (ddlCompanyName.SelectedIndex > 0 && ddlCustomerBusinessName.SelectedIndex > 0)
+			{
+				IInvoiceService invoiceService = ServiceFactory.CreateService<InvoiceService>();
+				InvoiceCollection invoiceCollection = invoiceService.GetFilteredInvoiceList(Convert.ToInt32 (ddlCompanyName.SelectedValue),Convert.ToInt32 ( ddlCustomerBusinessName.SelectedValue));
+
+				ddlInvoiceNumber.DataTextField = "InvoiceNumber";
+				ddlInvoiceNumber.DataValueField = "Id";
+
+				ddlInvoiceNumber.DataSource = invoiceCollection;
+				ddlInvoiceNumber.DataBind();
+				ddlInvoiceNumber.Items.Insert(
+						0, new ListItem("-Select Invoice-", DefaultValueForDropdown));
+			}
 		}
 
 

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddInvoiceSettlement.ascx.cs" Inherits="PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement.AddInvoiceSettlement" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddInvoiceSettlement.ascx.cs" Inherits="PharmAssist.AdminWeb.ModuleAdmin.InvoiceSettlement.AddInvoiceSettlement"%>
 <div>
 	<table>
 		<tr>
@@ -6,7 +6,7 @@
 			<asp:Literal ID="ltlCompanyName" runat="server" Text="Company Name"></asp:Literal>
 			</td>
 			<td>
-				<asp:DropDownList ID="ddlCompanyName" runat="server"></asp:DropDownList>
+				<asp:DropDownList ID="ddlCompanyName" runat='server' AutoPostBack='true' OnSelectedIndexChanged="ddlCompanyName_SelectedIndexChanged"></asp:DropDownList>
 			</td>
 		</tr>
 		<tr>
@@ -14,7 +14,7 @@
 			<asp:Literal ID="ltlCustomerBusinessName" runat="server" Text="Customer Business Name"></asp:Literal>
 			</td>
 			<td>
-				<asp:DropDownList ID="ddlCustomerBusinessName" runat="server"></asp:DropDownList>
+				<asp:DropDownList ID="ddlCustomerBusinessName" runat="server"  AutoPostBack='true' OnSelectedIndexChanged="ddlCompanyName_SelectedIndexChanged"></asp:DropDownList>
 			</td>
 		</tr>
 		<tr>

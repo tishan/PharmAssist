@@ -29,5 +29,11 @@ namespace PharmAssist.Core.Services.Implementations
 			IInvoiceDao invoiceDao = DaoFactory.CreateDao<IInvoiceDao>();
 			return invoiceDao.GetById(invoiceid);
 		}
+
+		public InvoiceCollection GetFilteredInvoiceList(int companyId, int customerId)
+		{
+			IInvoiceDao invoiceDao = DaoFactory.CreateDao<IInvoiceDao>();
+			return invoiceDao.GetFilteredInvoiceList(companyId, customerId); 
+		}
 	}
 }
